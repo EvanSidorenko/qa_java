@@ -3,19 +3,16 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParameterizedTest {
     private String sex;
-    private boolean hasMane;
+    private boolean expectedHasMane;
 
-    public LionParameterizedTest (String sex, boolean hasMane) {
+    public LionParameterizedTest (String sex, boolean expectedHasMane) {
         this.sex = sex;
-        this.hasMane = hasMane;
+        this.expectedHasMane = expectedHasMane;
     }
 
     @Parameterized.Parameters
@@ -24,19 +21,21 @@ public class LionParameterizedTest {
                 {"Самец", true},
                 {"Самка", false},
         };
+    }
 
         @Test
-        public void doesHaveManeReturnsBoolean () {
+        public void lionReturnsHasMane () throws Exception {
             // Arrange
-
+            Lion lion = new Lion(sex);
 
             // Act
-
+            boolean actualHasMane = lion.hasMane;
 
             // Assert
 
+            assertEquals(expectedHasMane, actualHasMane);
 
         }
+
     }
 
-}
