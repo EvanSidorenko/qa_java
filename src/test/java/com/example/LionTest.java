@@ -8,10 +8,11 @@ import static org.junit.Assert.assertEquals;
 
 public class LionTest {
     @Test
-    public void getKittensReturnsNumberOfKittens() throws Exception {
+    public void doesHaveManeReturnsTrue() throws Exception {
         //Arrange
+        Feline feline = new Feline();
         String sex = "Самец";
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, feline);
         boolean expectedDoesHaveMane = true;
 
         // Act
@@ -25,8 +26,9 @@ public class LionTest {
     @Test
     public void getFoodReturnsFoodForPredator() throws Exception {
         // Arrange
+        String sex = "Самец";
         Feline feline = new Feline();
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion(sex, feline);
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
 
         // Act

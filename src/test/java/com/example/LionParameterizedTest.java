@@ -25,14 +25,13 @@ public class LionParameterizedTest {
 
         @Test
         public void lionReturnsHasMane () throws Exception {
+            Feline feline = new Feline();
             // Arrange
-            Lion lion = new Lion(sex);
-
+            Lion lion = new Lion(sex, feline);
             // Act
             boolean actualHasMane = lion.hasMane;
 
             // Assert
-
             assertEquals(expectedHasMane, actualHasMane);
 
         }

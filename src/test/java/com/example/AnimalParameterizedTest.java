@@ -7,11 +7,11 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class FelineParameterizedTest {
+public class AnimalParameterizedTest {
     private String animalKind;
     private List<String> expectedFood;
 
-    public FelineParameterizedTest(String animalKind, List<String> expectedFood) {
+    public AnimalParameterizedTest(String animalKind, List<String> expectedFood) {
         this.animalKind = animalKind;
         this.expectedFood = expectedFood;
     }
