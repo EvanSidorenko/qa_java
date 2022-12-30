@@ -37,4 +37,18 @@ public class LionTest {
         // Assert
         assertEquals(expectedFood, actualFood);
     }
+
+    @Test
+    public void getKittensReturnsAmountOfKittens() throws Exception {
+        // Arrange
+        String sex = "Самец";
+        Feline feline = new Feline();
+        Lion lion = new Lion(sex, feline);
+        int expectedAmountOfKittens = 1;
+        // Act
+        int actualAmountOfKittens = lion.getKittens();
+
+        // Assert
+        assertEquals(expectedAmountOfKittens, actualAmountOfKittens);
+    }
 }
